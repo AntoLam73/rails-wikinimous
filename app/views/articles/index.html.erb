@@ -1,17 +1,21 @@
-<div>
-  <h1>Wikinimous</h1>
-  <%= link_to "New Article", new_article_path %>
+<div class="d-flex justify-content-between align-items-center mt-3 mb-4 px-4 border-bottom pb-3 bg-light">
+  <h4>Wikinimous</h4>
+  <%= link_to "New Article", new_article_path, :class=>"btn btn-primary" %>
 </div>
 
-<div>
-  <ul>
-    <% @articles.each do |article| %>
-      <li>
-        <%= link_to article_path(article) do %>
-          <%= article.title %>
-        <% end %>
-        <%= article.content  %>
-      </li>
-    <% end %>
-  </ul>
+<div class="container mt-5 mb-5">
+  <div>
+    <ul>
+      <% @articles.each do |article| %>
+        <li class="list-group-item mb-4">
+          <h3>
+            <%= link_to article_path(article) do %>
+              <%= article.title %>
+            <% end %>
+          </h3>
+          <%= article.content  %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

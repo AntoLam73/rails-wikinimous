@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Create 10 sample articles with fake data
+10.times do
+  Article.find_or_create_by!(
+    title: Faker::Book.title,
+    content: Faker::Lorem.paragraph(sentence_count: 5)
+  )
+end
